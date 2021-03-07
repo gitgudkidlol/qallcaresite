@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Display Clinics {%endblock%}
+{% block content%}
+<div>
+	<table class="table table-dark">
+	<tr>
+		<th scope="col">Clinic Name</th>
+		<th scope="col">placeholder</th>
+
+	</tr>
+		{% for each in ls%}
+			<tr>
+				<td><a href={{each.id}}>{{each.name}}</a></td>
+				<td>placeholder</td>
+			</tr>
+		{%endfor%}
+	</table>
+</div>
+
+
+<div>
+	<form method="post" action="/clinics/">
+	{%csrf_token%}
+{{form}}
+	<button type="submit", name="save"> New Clinic </button>
+</form>
+</div>
+
+{%endblock%}
