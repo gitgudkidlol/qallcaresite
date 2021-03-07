@@ -17,7 +17,6 @@ def displayClients(response):
 
 def displayEmployees(response):
 	ls= response.user.client_set.get()
-	# ls2=ls.patient_set.all()
 	return render(response, "main/display.html",{'ls':ls})
 
 def login(response):

@@ -14,14 +14,14 @@
 		<th scope="col">Diagnosis</th>
 		<th scope="col">PDF Report</th>
 		<th scope="col">Date Modified</th>
-
 	</tr>
 		{% for patient in ls.patient_set.all%}
 			<tr>
 				<td>{{patient.firstname}}</td>
 				<td>{{patient.lastname}}</td>
-				<td>{{patient.diagnosis}}</td>
-				<td><a>Open</a></td>
+				<td>{{patient.notes}}</td>
+				<td><a href="{{patient.pdffile_set.get.pdf.url}}">{{patient.pdffile_set.get}}</a>
+				</td>
 				<td>{{patient.date}}</td>
 			</tr>
 		
