@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Display Title {%endblock%}
+{% block content%}
+
+<div>
+	<table class="table table-dark">
+	<tr>
+		<th style="text-align: center">Location: {{ls}}</th>
+	</tr>
+	<tr>
+		<th scope="col">First Name</th>
+		<th scope="col">Last Name</th>
+		<th scope="col">Diagnosis</th>
+		<th scope="col">PDF Report</th>
+		<th scope="col">Date Modified</th>
+
+	</tr>
+		{% for patient in ls.patient_set.all%}
+			<tr>
+				<td>{{patient.firstname}}</td>
+				<td>{{patient.lastname}}</td>
+				{% if patient.diagnosis %}
+					<td>Positive</td>
+				{%else%}
+					<td>Negative</td>
+				{%endif%}
+				<td><a>Open</a></td>
+				<td>Date</td>
+			</tr>
+		
+
+		{%endfor%}
+
+	</table>
+</div>
+<form method="post" action="/upload/">
+	{{form}}
+	<button type="submit", name="save">Upload</button>
+</form>
+
+{%endblock%}
