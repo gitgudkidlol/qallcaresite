@@ -20,13 +20,9 @@
 			<tr>
 				<td>{{patient.firstname}}</td>
 				<td>{{patient.lastname}}</td>
-				{% if patient.diagnosis %}
-					<td>Positive</td>
-				{%else%}
-					<td>Negative</td>
-				{%endif%}
+				<td>{{patient.diagnosis}}</td>
 				<td><a>Open</a></td>
-				<td>Date</td>
+				<td>{{patient.date}}</td>
 			</tr>
 		
 
