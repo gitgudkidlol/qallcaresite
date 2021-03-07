@@ -1,30 +1,34 @@
 {% extends 'main/base.html' %}
 
-{% block title %} Display Clinics {%endblock%}
+{% block title %} Display Clients {%endblock%}
 {% block content%}
 <div>
 	<table class="table table-dark">
 	<tr>
-		<th scope="col">Clinic Name</th>
-		<th scope="col">placeholder</th>
+		<th scope="col">Client Name</th>
+		<th scope="col">Username</th>
+		
 
 	</tr>
 		{% for each in ls%}
 			<tr>
-				<td><a href={{each.id}}>{{each.name}}</a></td>
-				<td>placeholder</td>
+				<td>{{each.name}}</td>
+				<td>{{each.fromUser}}</td>
+				
 			</tr>
 		{%endfor%}
 	</table>
 </div>
+<a href="/admin">Admin Log in</a>
 
-
+<!--
 <div>
-	<form method="post" action="/clinics/">
+	<form method="post" action="/clients/">
 	{%csrf_token%}
 {{form}}
 	<button type="submit", name="save"> New Clinic </button>
 </form>
 </div>
+-->
 
 {%endblock%}
